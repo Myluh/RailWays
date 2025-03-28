@@ -1,0 +1,390 @@
+/* EMPTY */
+.empty{
+    background-image: url("pics/tiles/empty.png");
+}
+/* STRAIGHT RAILS */
+.straight_rail_vert{
+    background-image: url("pics/tiles/straight_rail.png");
+}
+.straight_rail_hor{
+    background-image: url("pics/tiles/straight_rail_hor.png");
+}
+/* BRIDGE */
+.bridge_vert{
+    background-image: url("pics/tiles/bridge.png");
+}
+.bridge_hor{
+    background-image: url("pics/tiles/bridge_hor.png");
+}
+.rail_bridge_vert{
+    background-image: url("pics/tiles/bridge_rail.png");
+}
+.rail_bridge_hor{
+    background-image: url("pics/tiles/bridge_rail_hor.png");
+}
+/* CURVED RAILS */
+.curved_rail_upright{
+    background-image: url("pics/tiles/curve_rail.png");
+}
+.curved_rail_upleft{
+    background-image: url("pics/tiles/curve_rail_upleft.png");
+}
+.curved_rail_downleft{
+    background-image: url("pics/tiles/curve_rail_downleft.png");
+}
+.curved_rail_downright{
+    background-image: url("pics/tiles/curve_rail_downright.png");
+}
+/* MOUNTAIN */
+.mountain_upright{
+    background-image: url("pics/tiles/mountain.png");
+}
+.mountain_upleft{
+    background-image: url("pics/tiles/mountain_upleft.png");
+}
+.mountain_downleft{
+    background-image: url("pics/tiles/mountain_downleft.png");
+}
+.mountain_downright{
+    background-image: url("pics/tiles/mountain_downright.png");
+}
+/* MOUNTAIN RAILS */
+.mountain_rail_upright{
+    background-image: url("pics/tiles/mountain_rail.png");
+}
+.mountain_rail_upleft{
+    background-image: url("pics/tiles/mountain_rail_upleft.png");
+}
+.mountain_rail_downleft{
+    background-image: url("pics/tiles/mountain_rail_downleft.png");
+}
+.mountain_rail_downright{
+    background-image: url("pics/tiles/mountain_rail_downright.png");
+}
+/* OASIS  */
+.oasis{
+    background-image: url("pics/tiles/oasis.png");
+}
+/* CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.hidden{
+    display: none !important;
+}
+#gameField{
+    border: 0.8em solid #8a6311;
+    border-radius: 1em;
+    overflow: hidden;
+    border-collapse:separate;
+    border-spacing: 0;
+    box-shadow: 0 10em 8em rgba(0, 0, 0, 0.1);
+    width: 34em;
+    height: 34em;
+}
+#gameField td{
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.03s linear;
+}
+
+body{
+    background-image: url(pics/tiles/rail.png);
+    background-repeat: repeat-x;
+    background-size: 26em;
+    background-position-y: 41em;
+    user-select: none;
+    font-weight: bold;
+    background-color: #F5F6E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.title {
+    font-size: 5em;
+    color: #bfa06e;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.name-input {
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.7em;
+    margin: 20px 0;
+    font-size: 2em;
+    border: 0.15em solid #bfa06e;
+    border-radius: 0.4em;
+    color: black;
+    font-weight: bold;
+    outline: none;
+    background-color: #fafafa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.name-input.missing {
+    border: 0.15em solid #e62b1d;
+  }
+
+.name-input::placeholder {
+    color: #D6C9AA;
+    opacity: 1;
+  }
+
+.name-input:focus {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-section {
+    color: #9eab85;
+    background-color: #fafafa;
+    border-radius: 2em;
+    border: 0.35em solid #9eab85;
+    padding: 2em;
+    padding-top: 5em;
+    line-height: 3em;
+}
+
+.difficulty-section.missing {
+    border: 0.35em solid #e62b1d;
+}
+
+.diffText{
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 1.3em;
+}
+
+.difficulty-btn {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 1em 2.3em;
+    margin: 0 8px;
+    border: 0.16em solid #9eab85;
+    background-color: #ffffff;
+    color: #9eab85;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-btn:hover {
+    transform: scale(1.03);
+}
+
+.difficulty-btn.selected {
+    background-color: #EAEFD3;
+    color: #747474;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-btn {
+    font-weight: bold;
+    width: 10em;
+    height: 5em;
+    font-size: 1.6rem;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 1em;
+    border: 0.2em solid #9eab85;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #EAEFD3;
+    color: #747474;
+}
+
+.difficulties{
+    font-size: 1.5em;
+    display: grid;
+    margin-top: 1em;
+    margin-left: 3em;
+    grid-template-columns: 11em 13em;
+}
+
+.menu-btn:hover, .backtomenu-btn:hover, .endgame:hover, .save-btn:hover, .clear-btn:hover{
+    transform: scale(1.03);
+}
+
+.menu-buttons{
+    margin-left: 0.7em;
+}
+
+.lower-menu{
+    display: grid;
+    grid-template-columns: 37em 18em;
+}
+
+.menu-btn.start{
+    color: #ffffff;
+    background-color: #505168;
+    border: 0.2em solid #28233A;
+}
+
+#game{
+    display: grid;
+    grid-template-columns: 26em 35em;
+    margin: 1.5em;
+}
+hr{
+    margin: 0.5em auto;
+    border: 0.05em solid #bfa06e;
+    width: 20em;
+}
+
+.gameSide .title{
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+}
+
+.gameSide{
+    text-align: center;
+    margin: 2em;
+    text-transform: uppercase;
+}
+
+.stat{
+    text-align: center;
+    padding-top: 1.2em;
+    padding-bottom: 1em;
+    background-color: #fafafa;
+    border: 0.3em solid #bfa06e;
+    border-radius: 0.8em;
+}
+
+.grayText{
+    font-size: 1.6em;
+    color: #747474;
+}
+
+.time,.playerName{
+    font-size: 3.5em;
+}
+
+.description{
+    margin-top: 2em;
+    color: #28233A;
+    font-size: 1.5em;
+    background-color: #fafafa;
+    border: 0.4em solid #bfa06e;
+    border-radius: 1em;
+    padding: 1em;
+    padding-bottom: 0.5em;
+    width: 50em;
+    text-align: center;
+}
+.descrTable{
+    border-spacing: 1em;
+    margin: auto;
+    color: #bfa06e;
+    text-transform: uppercase;
+}
+.descrTable img{
+    border: 0.2em solid #bfa06e;
+    border-radius: 0.5em;
+    width: 8em;
+}
+
+.descr-text{
+    color: black;
+    font-size: 0.8em;
+}
+
+.empty-img:hover {
+    content: url("pics/tiles/straight_rail_hor.png");
+}
+.bridge-img:hover {
+    content: url("pics/tiles/bridge_rail.png");
+}
+.mountain-img:hover {
+    content: url("pics/tiles/mountain_rail.png");
+}
+
+.backtomenu-btn, .endgame,.save-btn, .clear-btn{
+    cursor: pointer;
+    width: 9em;
+    height: 4em;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #505168;
+    border: 0.2em solid #28233A;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.winscreen{  
+    font-size: 1.8em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    background-color: #ffffff;
+    border: 0.2em solid #bfa06e;
+    border-radius: 1em;
+    padding: 1em;
+    padding-bottom: 0.5em;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+    line-height: 2em;
+}
+
+.endTime{
+    color: #747474;
+}
+
+.endgame{
+    width: 10em;
+    height: 2.5em;
+}
+
+.save-btn{
+    margin-top: 1em;
+    width: 6em;
+    height: 3em;
+}
+
+.clear-btn{
+    background-color: #bfa06e;
+    border: 0.2em solid #8a6311;
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 6em;
+    height: 3em;
+}
+
+.toplist > table{
+    margin: auto;
+}
+
+.toplist tbody tr:not(:first-child){
+    color: #8a6311;
+}
+
+.toplist td{
+    width: 6em;
+}
+
+.playerName{
+    font-size: 3.3em;
+}
+
+.loadgame{
+    color: #ffffff;
+    background-color: #bfa06e;
+    border: 0.2em solid #8a6311;
+}

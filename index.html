@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railways</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="menu">
+        <h1 class="title">RAILWAYS</h1>
+
+        <input type="text" class="name-input" placeholder="ADD MEG A NEVED!" maxlength="9">
+        <div class="lower-menu">
+            <div class="difficulty-section">
+                <p class="diffText">ÁLLÍTSD BE A NEHÉZSÉGET!</p>
+                <button class="difficulty-btn easy">5 x 5</button>
+                <button class="difficulty-btn hard">7 x 7</button>
+                <br>
+                <div class="difficulties">
+                    <span>KÖNNYŰ</span>
+                    <span>NEHÉZ</span>
+                </div>
+            </div>
+            <div class="menu-buttons">
+                <button class="menu-btn description-btn">LEÍRÁS</button>
+                <button class="menu-btn start">JÁTÉK INDÍTÁSA</button>
+                <button class="menu-btn loadgame">JÁTÉK<br>BETÖLTÉSE</button>
+            </div>
+        </div>
+    </div>
+    <div class="description hidden">
+        <p>
+            Nekeresdországban Nevenincs király szeretne egy körvasutat építeni, amely bejárja a birodalmának 
+            minden szegletét. A feladat megvalósítása Furfangra, az udvari tanácsosra vár, akinek a munkáját 
+            nehezíti a királyság változatos tája. Segítsünk Furfangnak megtervezni a királyság vasúthálózatához tartozó térképet!
+        </p>
+        <br>
+        <p>
+            A térképen több különböző típusú mező található, melyek a játék kezdetén látszódnak a térképen:
+        </p>
+        <table class="descrTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="pics/tiles/empty.png" alt="Üres mező" class="empty-img">
+                    </td>
+                    <td>
+                        <img src="pics/tiles/bridge.png" alt="Híd mező" class="bridge-img">
+                    </td>
+                    <td>
+                        <img src="pics/tiles/mountain.png" alt="Hegy mező" class="mountain-img">
+                    </td>
+                    <td>
+                        <img src="pics/tiles/oasis.png" alt="Oázis mező">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Üres mező
+                    </td>
+                    <td>
+                        Híd mező
+                    </td>
+                    <td>
+                        Hegy mező
+                    </td>
+                    <td>
+                        Oázis mező
+                    </td>
+                </tr>
+                <tr class="descr-text">
+                    <td>
+                        Ebben a cellában a vasútvonal a belépési irányon kívül maradék három irányba tud haladni.
+                    </td>
+                    <td>
+                        Ezen a mezőn a vasútvonalat csak a híd által megadott egyenes írányban lehet megépíteni.
+                    </td>
+                    <td>
+                        Ezeken a mezőkön a sziklák a cellának két szomszédos kijáratát lezárják, így csak 90°-ban elfordulva lehet továbbhaladni.
+                    </td>
+                    <td>
+                        Erre a cellára nem lehet vasutat építeni.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="backtomenu-btn">VISSZA A MENÜBE</button>
+    </div>
+    <div id="desc" class="hidden"></div>
+    <div id="game" class="hidden">
+        <div class="gameSide">
+            <h1 class="title">RAILWAYS</h1>
+            <div class="stat">
+                <p class="grayText">Útvonaltervező:</p>
+                <p class="playerName"></p>
+                <hr>
+                <p class="grayText">Eltelt idő:</p>
+                <p class="time">00</p>
+            </div>
+            <button class="save-btn">Mentés</button>
+            <button class="clear-btn">Tisztítás</button>
+        </div>
+        <div>
+            <table id="gameField">
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="winscreen hidden">
+        <p>Gratulálok <span class="insertPlayerName"></span>, kivitted a pályát!</p>
+        <p class="endTime">idő: <span class="insertTime"></span></p>
+        <hr>
+        <div class="toplist">
+            <table>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <button class="endgame">vissza a menübe</button>
+    </div>
+</body>
+</html>
